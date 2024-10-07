@@ -1,0 +1,208 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Poppins', sans-serif;
+}
+
+body {
+  font-size: 16px; /* Base font size for better readability */
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+nav {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  background-color: #1b1b1b;
+  padding: 10px 0;
+  z-index: 12;
+}
+
+.menu {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 20px;
+  max-width: 1024px; /* Adjust for larger breakpoint if needed */
+  margin: 0 auto;
+}
+
+.logo {
+  color: #fff;
+  font-size: 28px;
+  font-weight: 600;
+}
+
+.menu ul {
+  display: flex; /* Changed from inline-flex for better responsiveness */
+}
+
+.menu ul li {
+  list-style: none;
+  margin: 0 10px; /* Adjusted for better spacing on smaller screens */
+}
+
+.menu ul li a {
+  color: #fff;
+  font-size: 16px; /* Adjusted font size to match base font */
+  font-weight: 500;
+  padding: 8px 15px;
+  border-radius: 5px;
+  transition: all 0.3s ease;
+}
+
+.menu ul li a:hover {
+  background: #fff;
+  color: black;
+}
+
+.img {
+  background: url("img.jpg") no-repeat center center;
+  background-size: cover;
+  width: 100%;
+  height: 100vh;
+  position: relative;
+}
+
+.img::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.4);
+}
+
+.center {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 100%;
+  padding: 0 20px;
+  text-align: center;
+}
+
+.center .title {
+  color: #fff;
+  font-size: 55px;
+  font-weight: 600;
+}
+
+.center .sub_title {
+  color: #fff;
+  font-size: 52px;
+  font-weight: 600;
+}
+
+.center .btns {
+  margin-top: 20px;
+}
+
+.center .btns button {
+  height: 55px;
+  width: 170px;
+  border-radius: 5px;
+  border: none;
+  margin: 0 10px;
+  border: 2px solid white;
+  font-size: 20px;
+  font-weight: 500;
+  padding: 0 10px;
+  cursor: pointer;
+  outline: none;
+  transition: all 0.3s ease;
+}
+
+.center .btns button:first-child {
+  color: #fff;
+  background: none;
+}
+
+.btns button:first-child:hover {
+  background: white;
+  color: black;
+}
+
+.center .btns button:last-child {
+  background: white;
+  color: black;
+}
+
+/* Media queries for smaller screens */
+@media only screen and (max-width: 768px) {
+  .center .title {
+    font-size: 40px;
+  }
+
+  .center .sub_title {
+    font-size: 36px;
+  }
+
+  .center .btns button {
+    height: 45px;
+    width:   
+ 150px;
+    font-size: 18px;
+  }
+
+  .menu ul {
+    display: none; /* Hide the menu on smaller screens */
+  }
+
+  .menu .toggle-menu {
+    display: block;
+    cursor: pointer;
+    padding: 10px;
+    border: none;
+    background-color: transparent;
+  }
+
+  .menu .toggle-menu::before {
+    content: "\2630"; /* Hamburger icon */
+    font-size: 24px;
+    color: #fff;
+  }
+
+  .menu .toggle-menu.active::before {
+    content: "\2716"; /* Cross icon */
+  }
+
+  .menu ul.show {
+    display: block;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 100%;
+    background-color: #1b1b1b;
+    padding: 10px;
+    z-index: 1;
+  }
+
+  .menu ul.show li {
+    margin: 5px 0;
+  }
+}
+
+@media only screen and (max-width: 480px) {
+  .center .title {
+    font-size: 32px;
+  }
+
+  .center .sub_title {
+    font-size: 28px;
+  }
+
+  .center .btns button {
+    height: 40px;
+    width: 130px;
+    font-size: 16px;
+  }
+}
